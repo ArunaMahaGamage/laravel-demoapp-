@@ -18,8 +18,8 @@ class CreateStudentsTable extends Migration
             $table->string('address');
             $table->string('gender');
             $table->integer('passing_year');
-            $table->integer('updated_at');
-            $table->string('created_at');
+            //$table->dateTime('updated_at');
+            $table->timestamps('created_at');
 
         });
     }
@@ -31,6 +31,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('students');
     }
 }

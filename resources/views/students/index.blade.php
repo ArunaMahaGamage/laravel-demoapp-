@@ -1,6 +1,6 @@
 @extends('layouts.header')
 @section('content')
-				<div id="second-option">
+				<div id="second-option" style="padding: 5%;">
 					<a name="students">
 						<div class="row header">
 							<div class="col-md-12">
@@ -15,32 +15,37 @@
 					@endif
 
 					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4 feature">
-							<strong align="center"><b>Roll Number</b></strong>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 feature">
-							<strong align="center"><b>Name</b></strong>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 feature">
-							<strong align="center"><b>Actions</b></strong>
-						</div>
-					
-						<div class="row">
+							<table class="table table-striped">
+							<thead>
+							<tr>							
+							<th>ID</th>
+							<th>Name</th>
+							<th>Gender</th>
+							<th>Passed On</th>
+							<th>Actions</th>
+							</tr>							
+							</thead>
+							<tbody>							
 							@foreach ($students as $student)
-								<div class="col-md-4 col-sm-4 col-xs-4 feature">
-									<strong align="center">{{ $student->id }}</strong>
-								</div>
-								<div class="col-md-4 col-sm-4 col-xs-4 feature">
-									<strong align="center"><a href="{{ route('students.show', array('id'=>$student->id)) }}">{{ $student->name }}</a></strong>
-								</div>
-								<div class="col-md-4 col-sm-4 col-xs-4 feature">
-									<strong align="center"><a href="{{ route('students.edit', array('id'=>$student->id)) }}">Edit</a> &nbsp|&nbsp<a href="{{ route('students.destroy', array('id'=>$student->id)) }}" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a></strong>
-								</div>
+								<tr>
+								<td>{{$student->id}}</td>
+								<td>{{$student->name}}</td>
+								<td>{{$student->gender}}</td>
+								<td>{{$student->passing_year}}</td>
+								<td>
+								<strong align="center"><a href="{{ route('students.show', array('id'=>$student->id)) }}">View</a> &nbsp|&nbsp<a href="{{ route('students.edit', array('id'=>$student->id)) }}">Edit</a> &nbsp|&nbsp<a href="{{ route('students.destroy', array('id'=>$student->id)) }}" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a></strong>
+								
+								</td>
+								</tr>
 							@endforeach
+							</tbody>
+							
+							</table>
+							
 						</div>
-						<!--Paginated view links -->
-						<div align="right"> {{ $students->links() }} </div>
-					</div>
+						<div class="row"><div align="right"> {{ $students->links() }} </div></row>
+
+					
 				</div>
 
 				
@@ -48,7 +53,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-3 copyright">
-								React LLC 2014
+								Palvision R & D Sri Lanka
 							</div>
 							<div class="col-sm-6 menu">
 								<ul>

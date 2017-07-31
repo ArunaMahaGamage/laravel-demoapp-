@@ -15,8 +15,8 @@ class CreateInterestsTable extends Migration
         Schema::create('interests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('updated_at');
-            $table->string('created_at');
+            //$table->dateTime('updated_at');
+            $table->timestamps('created_at');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('interests');
     }
 }

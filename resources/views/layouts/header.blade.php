@@ -15,7 +15,9 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('js/theme.js') }}"></script>
-
+<style type="text/stylesheet" rel="stylesheet">
+#second-option{padding:5%}
+</style>
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

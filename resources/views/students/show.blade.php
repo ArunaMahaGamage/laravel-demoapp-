@@ -20,7 +20,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="col-md-6">
-										<label for="name">Roll No: </label>
+										<label for="name">ID: </label>
 									</div>
 									<div class="col-md-6">
 							    		{{ $id }}

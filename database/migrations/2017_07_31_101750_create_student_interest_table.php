@@ -17,8 +17,8 @@ class CreateStudentInterestTable extends Migration
             $table->increments('id');
             $table->integer('student_id');
             $table->integer('interest_id');
-            $table->integer('updated_at');
-            $table->string('created_at');
+           // $table->dateTime('updated_at');
+            $table->timestamps('created_at');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateStudentInterestTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('student_interest');
     }
 }
